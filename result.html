@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+<body style="background-color: rgb(147, 199, 182);">
+
+	<header>
+	{% block content%}
+	{% if prediction == 1 %}
+	<h2 style="color:blue;font-size:20;text-align: center;">Thank you!!<br>Hope to see you soon {{uname}}</h2>
+	{% elif prediction == 0 %}
+	<h2 style="color:red;font-size:20;text-align: center;">We will look into the problem {{uname}} :(</h2>
+	{% else %}
+	<h2 style="text-align: center;">Please check the details you've entered</h2>
+	{% endif %} 
+	{% endblock%}
+	</header>
+	
+	<a href="{% url 'home' %}"><p style="text-align: center; color: burlywood;">Click here to go back</p></a>
+   
+</body>
+</html>

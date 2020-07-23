@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Restaurant reviews</title>
+    </head>
+    <body style="background-color: darkgray;">
+        <h1 style="text-align: center;">Welcome to review collector of ABC restaurant</h1>
+        <h2 style="text-align: center;">Thank you for your precious time </h2>
+        <h2 style="text-align: center;">Your feedback will help us improve your experience</h2>
+        {% block content %}
+        <form method="post" action="{%url 'result' %}" style="width: 30px; margin: 0 auto;">
+            {% csrf_token %}
+            <p>Name:</p>
+             <input type="text" name="u_name"> <br>
+            <p>Feedback:</p>
+            <input type="text" name="review" > <br>
+            <a href="{% url 'result' %}" ><br><button type="Submit" style="background-color: black; color: beige;">Submit</button></a> 
+        </form>
+        {% endblock %}
+    </body>
+</html>
+
